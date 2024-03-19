@@ -1,0 +1,11 @@
+package in.ashokit.entity;
+
+import java.util.Date;
+
+public class Person {
+	private Integer  personId;
+	private String personName;
+	private Date personDob;
+	private String personGender;
+
+}

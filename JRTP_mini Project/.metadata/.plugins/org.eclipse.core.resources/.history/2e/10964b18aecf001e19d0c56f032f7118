@@ -1,0 +1,14 @@
+package in.ashokit.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Person {
+	private Integer  personId;
+	private String personName;
+	private Date personDob;
+	private String personGender;
+
+}

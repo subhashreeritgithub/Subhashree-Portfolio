@@ -1,0 +1,42 @@
+package in.ashokit.service;
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.ashokit.entity.Passport;
+import in.ashokit.entity.Person;
+import in.ashokit.repo.PassportRepo;
+import in.ashokit.repo.PersonRepo;
+
+@Service
+public class PersonService {
+	@Autowired
+	private PersonRepo personRepo;
+	
+	@Autowired
+	private PassportRepo passportRepo;
+	
+	//write the method to save the data
+	public void savePerson() {
+	//create 1st the person object
+		Person person= new Person();
+		//set the data here 
+		person.setPersonName("subhashree");
+		person.setPersonGender("female");
+		person.setPersonDob(LocalDate.now().minusYears(20));
+		person.setPersonGender("female");
+		
+		
+	//create passport object ...
+		
+       Passport passport = new Passport();
+       passport.setPassportNum("HJK6899HJ");
+       passport.setIssueDate(LocalDate.now());
+       passport.setExpDate(LocalDate.now().plusYears(10));
+       
+		
+	}
+
+}

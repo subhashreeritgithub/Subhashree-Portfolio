@@ -1,0 +1,6 @@
+private String email;
+	private String from;
+	private String to;
+	private String tarinnum;
+	private String doj;
+	

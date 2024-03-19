@@ -1,0 +1,13 @@
+package in.ashokit.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+@Entity
+public class Passport {
+	private Integer passportId;
+	private String  passportNum;
+	private Date issueDate;
+	private Date expDate;
+
+}

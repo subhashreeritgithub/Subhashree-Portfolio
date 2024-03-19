@@ -1,0 +1,28 @@
+package in.ashokit.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+
+@Entity
+public class Person {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer  personId;
+	private String personName;
+	private Date personDob;
+	private String personGender;
+	
+	//Mapping here ...
+	@OneToOne(mappedBy="person",cascade =CascadeType.ALL)
+	/* casecade- it is used here bcz all the chnges occured in parent class the same chnge will reflect in child class aslo
+	 * 
+	 */
+	private Passport passport;
+
+}

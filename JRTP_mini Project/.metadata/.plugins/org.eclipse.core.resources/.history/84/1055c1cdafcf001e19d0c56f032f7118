@@ -1,0 +1,26 @@
+package in.ashokit.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+@Entity
+public class Passport {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer passportId;
+	private String  passportNum;
+	private Date issueDate;
+	private Date expDate;
+	
+	
+	//mapping relation here...
+	@OneToOne
+	@JoinColumn(name="person_id")//it is the foregin key
+	private Person person;
+
+}

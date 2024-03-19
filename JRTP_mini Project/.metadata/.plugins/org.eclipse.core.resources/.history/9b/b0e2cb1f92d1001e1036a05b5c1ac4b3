@@ -1,0 +1,21 @@
+package in.ashokit.config;
+
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.springframework.context.annotation.Configuration;
+
+import in.ashokit.constants.AppConstants;
+
+@Configuration
+public class KakfaProducerConfig {
+ public ProducerFactory<String, order>producerFactory(){
+	 Map<String, object> configProps = new HashMap<>();
+	 //where the kafka server is present 
+	 configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,AppConstants.HOST);
+	 //in here store the key type   in string format
+	 configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
+	 //here the value ,order data will store
+	 configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,JsonSerializer.class);
+	 return  new DefaultKakfaProducerfactory<>(configPropos);
+	 
+ }
+}

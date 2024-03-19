@@ -1,0 +1,17 @@
+package in.ashokit.service;
+
+import org.springframework.stereotype.Service;
+
+import in.ashokit.repo.EmployeeRepo;
+
+@Service
+public class EmployeeService {
+	private EmployeeRepo empRepo;
+	public EmployeeService(EmployeeRepo empRepo) {
+		this.empRepo=empRepo;
+		System.out.println(this.empRepo.getClass().getName());
+		
+	}
+
+}
+ 
